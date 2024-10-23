@@ -7,6 +7,9 @@ import Navbar from './components/Navbar/Navbar';
 import LoginPage from './components/LoginPage/LoginPage';
 import RegisterPage from './components/RegisterPage/RegisterPage';
 
+import DetailsPage from './components/DetailsPage/DetailsPage';
+
+
 function App() {
 
   return (
@@ -16,9 +19,11 @@ function App() {
           {/* the final code will not pass the products to every page, but each page will call the server API */}
           <Route path="/" element={<MainPage />} />
           <Route path="/app" element={<MainPage />} />
-        
+
           <Route path="/app/login" element={<LoginPage/>} />
           <Route path="/app/register" element={<RegisterPage />} />
+
+          <Route path="/app/product/:productId" element={<DetailsPage/>} />
         </Routes>
         </>
   );
