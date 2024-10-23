@@ -6,7 +6,7 @@ const pinoLogger = require('./logger');
 
 const connectToDatabase = require('./models/db');
 const {loadData} = require("./util/import-mongo/index");
-
+const searchRoutes = require('./routes/searchRoutes');
 
 const app = express();
 app.use("*",cors());
@@ -40,6 +40,7 @@ app.use(pinoHttp({ logger }));
 
 // Search API Task 2: add the searchRoutes to the server by using the app.use() method.
 //{{insert code here}}
+app.use('/api/search', searchRoutes);
 
 
 // Global Error Handler
